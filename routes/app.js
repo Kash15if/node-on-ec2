@@ -42,21 +42,17 @@ router.post('/update:_id',urlEncodedParser,async function(req,res){
   
   await Note.findByIdAndUpdate({_id: req.params._id},req.body);
 
-  await function(){
-    res.redirect('/app/my_notes');
-    }; 
+  await res.redirect('/app/my_notes');
+    
 }); 
 
 // route for deleting particular note and redirecting the my note page 
 router.get('/delete:_id',async function(req,res){
 await Note.findByIdAndRemove({_id: req.params._id}, )
-await function(){
-    details.exec(function(err,data){
+await details.exec(function(err,data){
         if (err) throw err;
         res.render('my_notes',{data: data});
     })
-     
-}
 
 });
 
