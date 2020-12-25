@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add_app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="/styles/lol1.css">
+
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-inverse" style="padding: 6px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/app/" style="font-size: 30px;">NoteApp</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#" style="font-size: 20px; padding-left:40px;">Profile</a></li>
+          <li><a href="/app//my_notes" style="font-size: 20px; padding-left:40px;">My Notes</a></li>
+          <li><a href="#" style="font-size: 20px; padding-left:40px;">Settings</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" style="font-size: 18px; padding-right:40px;"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+
+
+
+    <a href="/app/notewrite" role="button"  class="btn btn-default btn-lg btn-block" style="padding: 20px">New Note</a>
+    <br><br>
+
+
+    <% data.forEach(function(row){ %>
+
+<div class="jumbotron">
+        <div class="row">
+                <div class="col-xs-10">
+                  <a href="/app/edit<%= row._id %>"><h4>Title: <%= row.title %></h4></a>
+                </div>
+                <div class="col-xs-1">
+                  <a href="/app/delete<%= row._id %>"><i class="fa fa-trash" aria-hidden="true" style="font-size: 30px"></i></a>
+                </div>  
+        </div>
+
+        <br>
+        <p> <span style="float: left;">Date:- 12/07/19</span>   <span style="float: right;">time:22:10</span></p>
+</div>
+
+  
+<%  }); %> 
+
+
+
+ </div>
+
+
+
+</body>
+</html>                            
+
